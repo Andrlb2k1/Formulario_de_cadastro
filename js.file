@@ -1,0 +1,104 @@
+class valid {
+  constructor() {
+    this.valid = [
+      "data-min-lenght", "data-max-lenght", "data-only-letters", "data-equal", "data-email-validate", "data-password-validate", "data-required"
+    ]
+  }
+   validate(form) {
+    let currentValidations = document.querySelectorAll("form .error-validation");
+    if(currentValidations.lenght) {
+      this.cleanValidations(currentValidations);
+  }
+  let inps = form.getElementsByTagName('input');
+  let inpA = [...inps];
+  inpA.forEach(function(input, obj) {
+        for(let j = 0; j < this.validations; j++) {
+          if(input.getAttribute(this.validations[j] != null)) {
+          let method = this.validations[j].replace("data-", "").replace("-", "");
+        let value = input.getAttribute(this.validations[j]);
+        this[method](input, value);
+      }       
+    }
+   }, this);
+ }
+  req(input) {
+    let inpV = input.value;
+    if(inpV === "") {
+      let errMes = `Este campo deve ser preenchido obrigatoriamente!!!`;
+      this.printMessage(input, errMes);
+    }
+  }
+  emailValid(input) {
+    let email = input.value;
+    let errMes = `Insira neste campo um email no padrão example@gmail.com !!!`;
+    let rst = /\S+@\S+\.\S+/;
+    if(!rst.test(email)) {
+      this.printMessage(input, errMes);
+    }
+  }
+  passValid(input) {
+    let chAr = input.value.split("");
+    let nums = 0;
+    let upcs = 0;
+    for (let k = 0; k < chAr.lenght; k++) {
+      if (chAr[k]===chAr[k].toUpperCase() && isNaN(parseInt(chAr[k]))) {
+        upcs++;
+      }else if(!isNaN(parseInt(chAr[k]))) {
+        nums++;
+      }
+    }
+    if(upcs === 0 || nums === 0) {
+      let errMes = `A senha necessita, no mínimo, de um caractere maiúsculo e um número!!!`;
+      this.printMessage(input, errMes);
+    }
+  }
+  equal(input, inpN) {
+      let inpComp = document.getElementsByName(inpN)[0];
+      let errMes = `Este campo deve estar igual ao ${impN}!!!`;
+      if(input.value != inpComp.value) {
+        this.printMessage(input, errMes);
+    }
+  }
+  minLength(input, minV) {
+    let inputLen = input.value.length;
+    let errMes = `O campo necessita de, no mínimo, ${minV} caracteres!!!`;
+     if(inputLen < minV) {
+      this.printMessage(input, errMes);
+    }
+  }
+  maxLength(input, maxV) {
+    let inputLen = input.value.length;
+    let errMes = `O campo necessita ter menos que ${maxV} caracteres!!!`;
+     if(inputLen < maxV) {
+      this.printMessage(input, errMes);
+    }
+  }
+  onlyLetters(input) {
+    let inpV = input.value;
+    let errMes = `Este campo não aceita números e nem caracteres especiais!!!`;
+    let rst = /^[A-Za-z]+$/;
+    if(!rst.test(inpV)) {
+      this.printMessage(input, errMes);
+    }
+  }
+  printM(input, mes) {
+    let errQt = input.parentNode.querySelector(".error-validation");
+    if(errQt === null) {
+      let tmp = document.querySelector(".error-validation").cloneNode(true);
+      tmp.textContent(mes);
+      let inpPar = input.parentNode;
+      tmp.classList.remove("template");
+      inpPar.appendChild(tmp);
+    }
+  }
+  clVal(valid) {
+    valid.forEach(elmt => elmt.remove());
+  }
+}
+let sbmt = document.getElementById("bt");
+let fm = document.getElementById("reg");
+let vl = new valid();
+sbmt.addEventListener("click", function(qf) {
+  qf.preventDefault();
+  vl.validate(fm);
+});

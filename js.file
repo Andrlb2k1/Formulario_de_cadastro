@@ -1,10 +1,10 @@
 class Valid {
   constructor() {
-    this.valid = [
-      "data-min-lenght", "data-max-lenght", "data-only-letters", "data-equal", "data-email-validate", "data-password-validate", "data-required"
+    this.validations = [
+      "data-min-length", "data-max-length", "data-only-letters", "data-equal", "data-email-validate", "data-password-validate", "data-required"
     ]
   }
-   validate(form) {
+   val(form) {
     let currentValidations = document.querySelectorAll("form .error-validation");
     if(currentValidations.length) {
       this.cleanValidations(currentValidations);
@@ -30,7 +30,7 @@ class Valid {
   }
   emailValid(inp) {
     let email = inp.value;
-    let errMes = `Insira neste campo um email no padrão example@gmail.com !!!`;
+    let errMes = `Insira neste campo um email no padrão example@email.com !!!`;
     let rst = /\S+@\S+\.\S+/;
     if(!rst.test(email)) {
       this.printMessage(inp, errMes);
@@ -69,7 +69,7 @@ class Valid {
   maxLen(inp, maxV) {
     let inpLen = inp.value.length;
     let errMes = `O campo necessita ter menos que ${maxV} caracteres!!!`;
-     if(inpLen < maxV) {
+     if(inpLen > maxV) {
       this.printMessage(inp, errMes);
     }
   }
@@ -96,7 +96,7 @@ class Valid {
   }
 }
 let sbmt = document.getElementById("bt");
-let fm = document.getElementById("reg");
+let fm = document.getElementById("regf");
 let vl = new Valid();
 sbmt.addEventListener("click", function(qf) {
   qf.preventDefault();

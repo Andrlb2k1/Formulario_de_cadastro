@@ -10,41 +10,40 @@
     <div class="cont">
       <h1>Formulário de cadastro</h1>
       <div>
-        <form id="reg" action="">
+        <form id="regf" action="">
           <div class="A">
             <label class="l" for="email">
               <span class="h">Defina seu e-mail de acesso</span>
-              <input class="h" id="v" type="email" data-min-length="12" data-max-length="22" placeholder="example@gmail.com" data-email-validate>
+              <input class="h" id="em" type="email" name="email" data-min-length="12" data-max-length="22" placeholder="example@email.com" data-email-validate>
             </label>
           </div>
           <div class="B">
             <label class="l" for="name">
               <span class="h">Digite seu primeiro nome</span>
-              <input class="h" id="r" type="text" placeholder="ex.: Ronaldo" data-required data-min-length="3" data-max-lenght="16" data-only-letters>
+              <input class="h" id="nm" name="name" type="text" placeholder="ex.: Ronaldo" data-required data-min-length="3" data-max-lenght="16" data-only-letters>
             </label>
             <label class="l" for="lastname">
               <span class="h">Digite seu sobrenome</span>
-              <input class="h" id="s" type="text" placeholder="ex.: Souza" data-required data-only-letters>
+              <input class="h" name="lastname" id="lnm" type="text" placeholder="ex.: Souza" data-required data-only-letters>
             </label>
           </div>
           <div class="C">
             <label class="l" for="password">
               <span class="h">Defina uma senha</span>
-              <input class="h" id="t" type="password" placeholder="ex.: Address234" data-password-validate data-required>
+              <input class="h" name="password" id="ps" type="password" placeholder="ex.: Address234" data-password-validate data-required>
             </label>
             <label class="l" for="passconfirmation">
               <span class="h">Confirme sua senha</span>
-              <input class="h" id="u" type="password" placeholder="Idêntica à senha anterior" data-equal="password">
+              <input class="h" name="passconfirmation" id="psc" type="password" placeholder="Idêntica à senha anterior" data-equal="password">
             </label>
           </div>
         </form>
         <div>
-        <input type="checkbox" id="agr">
+        <input type="checkbox" id="agr" name="agr" data-required>
           <label for="agr" id="agrlab">Li e aceito os <a href="https://www.riotgames.com/pt-br/terms-of-service-BR">termos de uso!</a></label>
       </div>
       </div>
       <div>
-        <span class="sp"></span>
         <input type="button" class="btn" id="bt" value="Criar conta">
       </div>
     </div>

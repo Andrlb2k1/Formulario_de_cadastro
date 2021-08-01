@@ -6,35 +6,35 @@ h1 {
   text-shadow: 2.3px 2.3px 2.3px black;
 }
 body {
-  background-color: #c2f5c4;
+  background-color: #c3f2c7;
 }
 .cont {
   margin: 10px;
   height: 38.4em;
   position: relative;
-  background-color: #98e39c;
+  background-color: #99e49d;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  border: 3.3px solid black;
+  border: 3.4px solid black;
 }
 .h {
   font-size: 18px;
   font-family: Helvetica, sans-serif;
 }
-#r, #s, #t, #u, #v {
+#nm, #lnm, #ps, #psc, #em {
   width: 15vw;
   height: 5.2vh;  
 }
 .A, .B, .C {
-  margin-bottom: 27px;
+  margin-bottom: 28px;
   margin-top: 14px;
-  padding: 17px;
+  padding: 18px;
 }
 .l {
-  border: 1.75px solid black;
-  padding: 14.5pt;
+  border: 1.8px solid black;
+  padding: 14.6pt;
 }
 .btn {
   width: 28vw;
@@ -52,12 +52,12 @@ body {
   display: none;
 }
 .error-validation {
-  color: rgb(6%, 62%, 79%);
-  font-size: 7pt;
+  color: rgb(8%, 62%, 79%);
+  font-size: 9pt;
   position: absolute;
   font-family: Arial;
 }
-#agrlab {
+#agrlab, #agr {
   font-size: 15pt;
   display: inline-block;
   margin-left: 2px;

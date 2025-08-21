@@ -1,0 +1,64 @@
+h1 {
+  font-size: 2.6em;
+  text-align: center;
+  margin-bottom: 27pt;
+  color: rgba(130, 83, 184, 0.85);
+  text-shadow: 2.3px 2.3px 2.3px black;
+}
+body {
+  background-color: #c3f2c7;
+}
+.cont {
+  height: 50em;
+  position: relative;
+  background-color: #7aec7c;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: 3.4px solid black;
+}
+.h {
+  font-size: 18px;
+  font-family: Helvetica, sans-serif;
+}
+#nm, #lnm, #ps, #psc, #em {
+  width: 15vw;
+  height: 5.2vh;  
+}
+.A, .B, .C, .D, .E {
+  margin-bottom: 28px;
+  margin-top: 14px;
+  padding: 18px;
+}
+.l {
+  border: 1.8px solid black;
+  padding: 14.6pt;
+}
+.btn {
+  width: 28vw;
+  height: 17vh;
+  margin-left: 14.6em;
+  margin-bottom: 21pt;
+  margin-top: 38pt;
+  font-size: 25pt;
+  position: absolute;
+  cursor: pointer;
+  display: flex;
+  background-color: #ddd;
+  border-radius: 2.9pc;
+}
+.template {
+  display: none;
+}
+.error-validation {
+  color: rgb(83%, 9%, 8%);
+  font-size: 11pt;
+  position: absolute;
+  font-family: Arial;
+}
+#agrlab, #agr {
+  font-size: 15pt;
+  display: inline-block;
+  margin-left: 2px;
+}
